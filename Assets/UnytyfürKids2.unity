@@ -346,7 +346,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b891b1ae61fe1e74eafe07c53831ace9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jump: 5
+  Gravity: 15
   Speed: 5
+  front: {fileID: 21300000, guid: e14e277ea44c95f4396f56dca1cbfafc, type: 3}
+  back: {fileID: 21300000, guid: 40418f89609d04548a9e40663aa15f48, type: 3}
+  right1: {fileID: 21300000, guid: 22bce40c311a60343bcba38b6054d074, type: 3}
+  right2: {fileID: 21300000, guid: fcaa1f48beec5974ca533e8676d5392f, type: 3}
+  left1: {fileID: 21300000, guid: 357007afc99ae5c4caac30eb8fa9d058, type: 3}
+  left2: {fileID: 21300000, guid: 661d5d3d34349a04c9fbe07985424353, type: 3}
 --- !u!212 &1585525545
 SpriteRenderer:
   m_ObjectHideFlags: 0
