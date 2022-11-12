@@ -11,7 +11,8 @@ public class PlayerControl : MonoBehaviour
     public Sprite right1, right2;
     public Sprite left1, left2;
 
-    private SpriteRenderer spriteRenderer;
+    private float current = 0.0f;
+    private SpriteRenderer renderer;
     private CharacterController figur;
     private Vector3 moveVector = Vector3.zero;
 
@@ -19,7 +20,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         figur = GetComponent<CharacterController>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,10 +31,26 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetButton("Jump")) moveVector.y = jump;
 
-        if (moveVector.x < 0) spriteRenderer.sprite = left1;
-        else if (moveVector.x > 0) spriteRenderer.sprite = right1;
-        else spriteRenderer.sprite = front;
+        if (moveVector.x < 0) goLeft();
+        else if (moveVector.x > 0) goRight();
+        else renderer.sprite = front;
 
         figur.Move(moveVector * Time.deltaTime * speed);
+    }
+
+    private void goLeft()
+    {
+        if (renderer.sprite == left1)
+            renderer.sprite = left2;
+        else
+            renderer.sprite = left1;
+    }
+
+    private void goRight()
+    {
+        if (renderer.sprite == right1)
+            renderer.sprite = right2;
+        else
+            renderer.sprite = right1;
     }
 }
