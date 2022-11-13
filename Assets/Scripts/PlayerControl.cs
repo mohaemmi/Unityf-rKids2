@@ -40,17 +40,23 @@ public class PlayerControl : MonoBehaviour
 
     private void goLeft()
     {
+        current += Time.deltaTime;
+        if (current < 0.2f && (renderer.sprite == left1 || renderer.sprite == left2)) return;
         if (renderer.sprite == left1)
             renderer.sprite = left2;
         else
             renderer.sprite = left1;
+        current = 0.0f;
     }
 
     private void goRight()
     {
+        current += Time.deltaTime;
+        if (current < 0.2f && (renderer.sprite == right1 || renderer.sprite == right2)) return;
         if (renderer.sprite == right1)
             renderer.sprite = right2;
         else
             renderer.sprite = right1;
+        current = 0.0f;
     }
 }
