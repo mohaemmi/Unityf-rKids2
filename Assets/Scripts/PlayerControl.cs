@@ -58,5 +58,6 @@ public class PlayerControl : MonoBehaviour
         else
             renderer.sprite = right1;
         current = 0.0f;
+
     }
 }
